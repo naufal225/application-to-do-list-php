@@ -1,3 +1,13 @@
+<?php 
+require "function.php";
+
+if(!isset($_COOKIE['jml'])) {
+    header("Location:login.php");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
