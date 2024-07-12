@@ -18,9 +18,32 @@ require 'functions.php';
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-    
-    
+<body class="font-[Poppins] min-h-screen w-full bg-[black] flex justify-center items-center">
+     
+    <div class="w-3/12 min-h-[60vh] bg-white rounded-lg flex flex-col justify-evenly items-center mx-auto">
+        <h1 class="text-4xl font-bold mb-5 mt-5">Login</h1>
+        <form action="" method="post" class="w-full max-w-sm">
+            <div class="mb-4 ml-7">
+                <input class="p-2 w-full md:w-80 rounded border border-gray-300" type="text" name="username" id="username" placeholder="Username" required>
+            </div>
+            <div class="mb-4 ml-7">
+                <input class="p-2 w-full md:w-80 rounded border border-gray-300" type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="mb-4 flex items-center ml-9">
+                <input class="mr-2" type="checkbox" name="remember" id="remember" required>
+                <label for="remember">Remember Me</label>
+            </div>
+            <button type="submit" class="md:w-9/12 mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-11">Login</button>
+        </form>
+        <div class="">
+            <span>Belum punya akun? </span><a href="register.php" class="text-blue-400">Daftar</a>
+        </div>
+    </div>
+
+
+
+    </div>
+
 
     <script src="js/script.js"></script>
 </body>
