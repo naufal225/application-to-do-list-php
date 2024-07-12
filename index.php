@@ -1,5 +1,5 @@
 <?php 
-require "function.php";
+require "functions.php";
 
 if(!isset($_COOKIE['jml'])) {
     header("Location:login.php");

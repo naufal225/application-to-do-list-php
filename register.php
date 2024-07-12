@@ -35,7 +35,7 @@ require 'functions.php';
             <button type="submit" class="md:w-9/12 mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-11">Daftar</button>
         </form>
         <div class="">
-            <span>Sudah punya akun? </span><a href="login.php" class="text-blue-400">Login</a>
+            <span>Sudah punya akun? </span><a href="login.php" class="text-blue-500 hover:text-blue-700">Login</a>
         </div>
     </div>
 
