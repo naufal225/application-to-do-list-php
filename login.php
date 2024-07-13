@@ -3,7 +3,7 @@ require 'functions.php';
 
 session_start();
 
-if(isset($_COOKIE['jml']) && isset($_COOKIE['lmj'])) {
+if(isset($_COOKIE['jml']) && isset($_COOKIE['lmj']) && $_COOKIE['jml'] != 0 && $_COOKIE['lmj'] != 0) {
     $id = $_COOKIE['jml'];
     $username = $_COOKIE['lmj'];
     $result = mysqli_query($conn, "SELECT * FROM tbl_user where id_user = $id");

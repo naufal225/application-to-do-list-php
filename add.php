@@ -4,7 +4,7 @@ require 'functions.php';
 if(isset($_POST['submit'])) {
     $konten_list = $_POST['task'];
     $id_user = $_COOKIE['jml'];
-    $query = "INSERT INTO tbl_list (konten_list, id_user) VALUES ('$konten_list', '$id_user')";
+    $query = "INSERT INTO tbl_list (konten_list, id_user, status_list) VALUES ('$konten_list', '$id_user', '')";
     if(query($query)>0) {
         echo "
             <script>
@@ -12,7 +12,6 @@ if(isset($_POST['submit'])) {
             </script>
         ";  
         header("Location: index.php");
-        exit();
     } else {
         echo "
             <script>

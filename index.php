@@ -57,15 +57,15 @@ $no = 1;
     </header>
 
     <!-- CARD -->
-    <div class="flex items-center justify-center h-full w-full">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-8/12">
+    <div class="flex items-center justify-center h-300 w-full">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-8/12 max-h-100">
             <h2 class="text-2xl font-bold mb-2">Your To Do List</h2>
             <form action="" method="post" class="">
                 <input class="min-w-52 w-10/12 m-3 p-3 border-2 border-grey-500" type="text" name="task" id="task" placeholder="Search Your Task" required>
                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2  transition duration-100">Seach</button>
             </form>
             <a href="add.php" type="submit" class="inline-block mb-6 my-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2  transition duration-100">Add Task</a>
-            <table class="w-full border-2 border-grey-500">
+            <table class="w-full border-2 border-grey-500 max-h-300 overflow-scroll">
                 <thead>
                     <tr class="bg-blue-300">
                         <th>No.</th>
