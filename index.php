@@ -10,19 +10,21 @@ if(!isset($_SESSION['login'])) {
 
 if(isset($_SESSION['username'])) {
     $id = $_SESSION['username'];
-    $result = mysqli_query($conn, "SELECT username FROM tbl_user where username = '$id'");
+    $result = mysqli_query($conn, "SELECT * FROM tbl_user where username = '$id'");
     $row = mysqli_fetch_assoc($result);
     $username = $row['username'];
+    $id = $row['id_user'];
 } else {
     $id = $_COOKIE['jml'];
     $result = mysqli_query($conn, "SELECT * FROM tbl_user WHERE id_user = $id");
     $row = mysqli_fetch_assoc($result);
     $username = $row["username"];
+    $id = $row['id_user'];
 }
 
-$lists = getAllList();
+$lists = getAllListWithIdUser($id);
 
-
+$no = 1;
 
 ?>
 
@@ -38,11 +40,11 @@ $lists = getAllList();
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body class="font-[Poppins] min-h-screen w-full bg-[black]">
-    <header class="w-full h-[10vh] bg-[#fff] m-0">
+<body class="font-[Poppins] h-full min-h-screen w-[100%] bg-blue-400 flex justify-center items-center flex-col">
+    <header class="w-[100vw] h-[10vh] bg-[#fff] m-0 fixed top-0">
         <nav class="px-20 py-6 flex items-center justify-between h-full">
-            <h1 class="font-bold text-4xl">To Do List Application</h1>
-            <h2 class="mr-20 text-2xl font-400">Hello, <?= $username ?></h2>
+            <h1 class="font-bold md:text-4xl text-sm">To Do List Application</h1>
+            <h2 class="mr-20 md:text-2xl text-sm font-400">Hello, <?= $username ?></h2>
             <div class="flex items-center justify-between h-full min-w-fit">
                 <form action="logout.php">
                     <button class="bg-red-200 py-2 px-5 font-bold flex items-center justify-between gap-4 rounded-lg">
@@ -53,6 +55,48 @@ $lists = getAllList();
             </div>
         </nav>
     </header>
+
+    <!-- CARD -->
+    <div class="flex items-center justify-center h-full w-full">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-8/12">
+            <h2 class="text-2xl font-bold mb-2">Your To Do List</h2>
+            <form action="" method="post" class="">
+                <input class="min-w-52 w-10/12 m-3 p-3 border-2 border-grey-500" type="text" name="task" id="task" placeholder="Search Your Task" required>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2">Seach</button>
+            </form>
+            <a href="add.php" type="submit" class="inline-block mb-6 my-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2">Add Task</a>
+            <table class="w-full border-2 border-grey-500">
+                <thead>
+                    <tr class="bg-blue-300">
+                        <th>No.</th>
+                        <th>Task</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <?php foreach($lists as $list): ?>
+                        <tr>
+                            <td>
+                                <?= $no++ ?>
+                            </td>
+                            <td>
+                                <?= $list['konten_list'] ?>
+                            </td>
+                            <td>
+                                <?= $list['status_list'] == "done" ? "Done" : "Haven't done yet" ?>
+                            </td>
+                            <td>
+                                <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> | 
+                                <a href="delete.php?id=<?= $list['id_list']?>" onclick="return confirm('Are you sure?')" class="text-red-500 hover:text-red-700">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END CARD -->
 
     <script src="js/script.js"></script>
 </body>
