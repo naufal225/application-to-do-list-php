@@ -47,7 +47,7 @@ $no = 1;
             <h2 class="mr-20 md:text-2xl text-sm font-400">Hello, <?= $username ?></h2>
             <div class="flex items-center justify-between h-full min-w-fit">
                 <form action="logout.php">
-                    <button class="bg-red-200 py-2 px-5 font-bold flex items-center justify-between gap-4 rounded-lg">
+                    <button class="bg-red-200 hover:bg-red-400 py-2 px-5 font-bold flex items-center justify-between gap-4 rounded-lg transition duration-100">
                         Log Out
                         <i class='bx bx-log-in'></i>
                     </button>
@@ -62,9 +62,9 @@ $no = 1;
             <h2 class="text-2xl font-bold mb-2">Your To Do List</h2>
             <form action="" method="post" class="">
                 <input class="min-w-52 w-10/12 m-3 p-3 border-2 border-grey-500" type="text" name="task" id="task" placeholder="Search Your Task" required>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2">Seach</button>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2  transition duration-100">Seach</button>
             </form>
-            <a href="add.php" type="submit" class="inline-block mb-6 my-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2">Add Task</a>
+            <a href="add.php" type="submit" class="inline-block mb-6 my-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2  transition duration-100">Add Task</a>
             <table class="w-full border-2 border-grey-500">
                 <thead>
                     <tr class="bg-blue-300">
@@ -76,21 +76,39 @@ $no = 1;
                 </thead>
                 <tbody class="text-center">
                     <?php foreach($lists as $list): ?>
-                        <tr>
-                            <td>
-                                <?= $no++ ?>
-                            </td>
-                            <td>
-                                <?= $list['konten_list'] ?>
-                            </td>
-                            <td>
-                                <?= $list['status_list'] == "done" ? "Done" : "Haven't done yet" ?>
-                            </td>
-                            <td>
-                                <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> | 
-                                <a href="delete.php?id=<?= $list['id_list']?>" onclick="return confirm('Are you sure?')" class="text-red-500 hover:text-red-700">Delete</a>
-                            </td>
-                        </tr>
+                        <?php if($no % 2 == 0): ?>
+                            <tr class="bg-blue-100">
+                                <td>
+                                    <?= $no++ ?>
+                                </td>
+                                <td>
+                                    <?= $list['konten_list'] ?>
+                                </td>
+                                <td>
+                                    <?= $list['status_list'] == "done" ? "Done" : "Haven't done yet" ?>
+                                </td>
+                                <td>
+                                    <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> | 
+                                    <a href="delete.php?id=<?= $list['id_list']?>" onclick="return confirm('Are you sure?')" class="text-red-500 hover:text-red-700">Delete</a>
+                                </td>
+                            </tr>
+                            <?php else: ?>
+                                <tr>
+                                    <td>
+                                        <?= $no++ ?>
+                                    </td>
+                                    <td>
+                                        <?= $list['konten_list'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $list['status_list'] == "done" ? "Done" : "Haven't done yet" ?>
+                                    </td>
+                                    <td>
+                                        <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> | 
+                                        <a href="delete.php?id=<?= $list['id_list']?>" onclick="return confirm('Are you sure?')" class="text-red-500 hover:text-red-700">Delete</a>
+                                    </td>
+                                </tr>
+                        <?php endif;?>
                     <?php endforeach; ?>
                 </tbody>
             </table>

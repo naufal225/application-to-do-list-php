@@ -1,7 +1,26 @@
 <?php 
 require 'functions.php';
 
-
+if(isset($_POST['submit'])) {
+    $konten_list = $_POST['task'];
+    $id_user = $_COOKIE['jml'];
+    $query = "INSERT INTO tbl_list (konten_list, id_user) VALUES ('$konten_list', '$id_user')";
+    if(query($query)>0) {
+        echo "
+            <script>
+                alert('Your task has been added successfully');
+            </script>
+        ";  
+        header("Location: index.php");
+        exit();
+    } else {
+        echo "
+            <script>
+                alert('Failed to add your task');
+            </script>
+        "; 
+    }
+}
 
 
 ?>
@@ -25,7 +44,7 @@ require 'functions.php';
             <h2 class="mr-20 md:text-2xl text-sm font-bold">Add Task</h2>
             <div class="flex items-center justify-between h-full min-w-fit">
                 <form action="logout.php">
-                    <button class="bg-red-200 py-2 px-5 font-bold flex items-center justify-between gap-4 rounded-lg">
+                    <button class="bg-red-200 hover:bg-red-400 py-2 px-5 font-bold flex items-center justify-between gap-4 rounded-lg  transition duration-100">
                         Log Out
                         <i class='bx bx-log-in'></i>
                     </button>
@@ -35,7 +54,14 @@ require 'functions.php';
     </header>
 
     <div class="flex items-center justify-center h-full w-full">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-5/12"></div>
+        <div class="bg-white rounded-lg shadow-lg p-6 w-5/12">
+            <h2 class="text-2xl font-bold">Add Your Task</h2>
+            <form action="" method="post" class="inline-block my-5 mx-auto w-full ">
+                <input class="min-w-52 w-9/12 m-3 p-3 border-2 border-grey-500" type="text" name="task" id="task" placeholder="Add Task" required>
+                <button type="submit" name="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2  transition duration-100">Add</button>
+                <a href="index.php" class="inline-block mt-6 text-red-500 hover:text-red-700  transition duration-100">Back to Home</a>
+            </form>
+        </div>
     </div>
     
 
