@@ -40,8 +40,8 @@ $no = 1;
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body class="font-[Poppins] h-full min-h-screen w-[100%] bg-blue-400 flex justify-center items-center flex-col">
-    <header class="w-[100vw] h-[10vh] bg-[#fff] m-0 fixed top-0">
+<body class="font-[Poppins] h-full min-h-screen w-full bg-blue-400 flex justify-center items-center flex-col">
+    <header class="w-full h-10vh bg-white m-0 fixed top-0">
         <nav class="px-20 py-6 flex items-center justify-between h-full">
             <h1 class="font-bold md:text-4xl text-sm">To Do List Application</h1>
             <h2 class="mr-20 md:text-2xl text-sm font-400">Hello, <?= $username ?></h2>
@@ -57,41 +57,43 @@ $no = 1;
     </header>
 
     <!-- CARD -->
-    <div class="flex items-center justify-center h-300 w-full">
+    <div class="flex items-center justify-center max-h-7/12 w-full mt-20">
         <div class="bg-white rounded-lg shadow-lg p-6 w-8/12 max-h-100">
             <h2 class="text-2xl font-bold mb-2">Your To Do List</h2>
             <form action="" method="post" class="">
                 <input class="min-w-52 w-10/12 m-3 p-3 border-2 border-grey-500" type="text" name="task" id="task" placeholder="Search Your Task" required>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2  transition duration-100">Seach</button>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2 transition duration-100">Search</button>
             </form>
-            <a href="add.php" type="submit" class="inline-block mb-6 my-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2  transition duration-100">Add Task</a>
-            <table class="w-full border-2 border-grey-500 max-h-300 overflow-scroll">
-                <thead>
-                    <tr class="bg-blue-300">
-                        <th>No.</th>
-                        <th>Task</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <?php foreach($lists as $list): ?>
-                        <?php if($no % 2 == 0): ?>
-                            <tr class="bg-blue-100">
-                                <td>
-                                    <?= $no++ ?>
-                                </td>
-                                <td>
-                                    <?= $list['konten_list'] ?>
-                                </td>
-                                <td>
-                                    <?= $list['status_list'] == "done" ? "Done" : "Haven't done yet" ?>
-                                </td>
-                                <td>
-                                    <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> | 
-                                    <a href="delete.php?id=<?= $list['id_list']?>" onclick="return confirm('Are you sure?')" class="text-red-500 hover:text-red-700">Delete</a>
-                                </td>
-                            </tr>
+            <a href="add.php" type="submit" class="inline-block mb-6 my-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg ml-2 transition duration-100">Add Task</a>
+            <!-- Pembungkus tabel dengan kelas Tailwind CSS -->
+            <div class="max-h-64 overflow-y-auto">
+                <table class="w-full border-2 border-grey-500 relative">
+                    <thead class="sticky top-0 left-0 right-0">
+                        <tr class="bg-blue-300">
+                            <th>No.</th>
+                            <th>Task</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <?php foreach($lists as $list): ?>
+                            <?php if($no % 2 == 0): ?>
+                                <tr class="bg-blue-100">
+                                    <td>
+                                        <?= $no++ ?>
+                                    </td>
+                                    <td>
+                                        <?= $list['konten_list'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $list['status_list'] == "done" ? "Done" : "Haven't done yet" ?>
+                                    </td>
+                                    <td>
+                                        <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> | 
+                                        <a href="delete.php?id=<?= $list['id_list']?>" onclick="return confirm('Are you sure?')" class="text-red-500 hover:text-red-700">Delete</a>
+                                    </td>
+                                </tr>
                             <?php else: ?>
                                 <tr>
                                     <td>
@@ -108,10 +110,11 @@ $no = 1;
                                         <a href="delete.php?id=<?= $list['id_list']?>" onclick="return confirm('Are you sure?')" class="text-red-500 hover:text-red-700">Delete</a>
                                     </td>
                                 </tr>
-                        <?php endif;?>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <!-- END CARD -->
