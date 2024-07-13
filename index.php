@@ -8,12 +8,21 @@ if(!isset($_SESSION['login'])) {
     exit();
 }
 
+if(isset($_SESSION['username'])) {
+    $id = $_SESSION['username'];
+    $result = mysqli_query($conn, "SELECT username FROM tbl_user where username = '$id'");
+    $row = mysqli_fetch_assoc($result);
+    $username = $row['username'];
+} else {
+    $id = $_COOKIE['jml'];
+    $result = mysqli_query($conn, "SELECT * FROM tbl_user WHERE id_user = $id");
+    $row = mysqli_fetch_assoc($result);
+    $username = $row["username"];
+}
+
 $lists = getAllList();
 
-$id = $_SESSION['username'];
-$result = mysqli_query($conn, "SELECT username FROM tbl_user where username = '$id'");
-$row = mysqli_fetch_assoc($result);
-$username = $row['username'];
+
 
 ?>
 
