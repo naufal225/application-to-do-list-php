@@ -1,7 +1,18 @@
 <?php 
 require 'functions.php';
 
-
+if(isset($_POST['submit'])) {
+    if(registrasi($_POST) > 0) {
+        echo "<script>
+            alert('Pendaftaran berhasil! Silahkan login.');
+            document.location.href = 'login.php';
+        </script>";
+    } else {
+        echo "<script>
+            alert('Pendaftaran gagal!');
+        </script>"; 
+    }
+}
 
 
 ?>
@@ -30,9 +41,9 @@ require 'functions.php';
                 <input class="p-2 w-full md:w-80 rounded border border-gray-300" type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <div class="mb-4 ml-7">
-                <input class="p-2 w-full md:w-80 rounded border border-gray-300" type="konfirmasi" name="konfirmasi" id="konfirmasi" placeholder="Konfirmasi Password" required>
+                <input class="p-2 w-full md:w-80 rounded border border-gray-300" type="password" name="konfirmasi" id="konfirmasi" placeholder="Konfirmasi Password" required>
             </div>
-            <button type="submit" class="md:w-9/12 mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-11">Daftar</button>
+            <button type="submit" name="submit" class="md:w-9/12 mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-11">Daftar</button>
         </form>
         <div class="">
             <span>Sudah punya akun? </span><a href="login.php" class="text-blue-500 hover:text-blue-700">Login</a>

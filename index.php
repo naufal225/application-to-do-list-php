@@ -1,10 +1,19 @@
 <?php 
 require "functions.php";
 
-if(!isset($_COOKIE['jml'])) {
+session_start();
+
+if(!isset($_SESSION['login'])) {
     header("Location:login.php");
     exit();
 }
+
+$lists = getAllList();
+
+$id = $_SESSION['username'];
+$result = mysqli_query($conn, "SELECT username FROM tbl_user where username = '$id'");
+$row = mysqli_fetch_assoc($result);
+$username = $row['username'];
 
 ?>
 
@@ -20,9 +29,21 @@ if(!isset($_COOKIE['jml'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body class="font-[Poppins] text-white min-h-screen w-full bg-[black]">
-    
-    
+<body class="font-[Poppins] min-h-screen w-full bg-[black]">
+    <header class="w-full h-[10vh] bg-[#fff] m-0">
+        <nav class="px-20 py-6 flex items-center justify-between h-full">
+            <h1 class="font-bold text-4xl">To Do List Application</h1>
+            <h2 class="mr-20 text-2xl font-400">Hello, <?= $username ?></h2>
+            <div class="flex items-center justify-between h-full min-w-fit">
+                <form action="logout.php">
+                    <button class="bg-red-200 py-2 px-5 font-bold flex items-center justify-between gap-4 rounded-lg">
+                        Log Out
+                        <i class='bx bx-log-in'></i>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
 
     <script src="js/script.js"></script>
 </body>
