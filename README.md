@@ -7,16 +7,16 @@ Naufal Ma'ruf Ashrori
 
 ## Screenshots
 ### Login
-![Login](screenshots/login.png)
+![Login](screenshot/login.png)
 
 ### Register
-![Register](screenshots/register.png)
+![Register](screenshot/register.png)
 
 ### Home
-![Home](screenshots/home.png)
+![Home](screenshot/dashboard.png)
 
 ### Add Task
-![Add Task](screenshots/add-task.png)
+![Add Task](screenshot/add.png)
 
 ## Technologies Used
 - HTML
