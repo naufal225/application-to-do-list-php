@@ -29,7 +29,9 @@ Naufal Ma'ruf Ashrori
 Follow these steps to set up and run the To-Do List Application:
 
 1. **Clone the repository:**
+```
 git clone https://github.com/naufal225/application-to-do-list-php.git
+```
 
 
 2. **Import Database:**
@@ -43,17 +45,16 @@ git clone https://github.com/naufal225/application-to-do-list-php.git
 4. **Start the Application:**
 - Navigate to the project directory.
 - Start your PHP development server:
+  
   ```
   php -S localhost:8000
   ```
 
 5. **Access the Application:**
-- Open your web browser and go to `http://localhost:8000`.
+- Open your web browser and go to  `http://localhost:8000`.
 
 6. **Login Credentials:**
-- Use the following credentials to log in:
-  - Username: `admin`
-  - Password: `admin123`
+- Log in with your:
 
 7. **Start Managing Your Tasks:**
 - You can now start managing your to-do list by adding, editing, and deleting tasks.
