@@ -58,5 +58,3 @@ Follow these steps to set up and run the To-Do List Application:
 
 7. **Start Managing Your Tasks:**
 - You can now start managing your to-do list by adding, editing, and deleting tasks.
-
-Feel free to explore and customize the application further as per your needs!
