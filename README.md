@@ -29,9 +29,9 @@ Naufal Ma'ruf Ashrori
 Follow these steps to set up and run the To-Do List Application:
 
 1. **Clone the repository:**
-```
-git clone https://github.com/naufal225/application-to-do-list-php.git
-```
+  ```
+  git clone https://github.com/naufal225/application-to-do-list-php.git
+  ```
 
 
 2. **Import Database:**
