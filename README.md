@@ -41,7 +41,7 @@ Follow these steps to set up and run the To-Do List Application:
 - Import the SQL file `database/todo_list.sql` into your database.
 
 3. **Configure Database Connection:**
-- Open `config/db.php`.
+- Open `functions.php`.
 - Update the database connection details (`DB_HOST`, `DB_USER`, `DB_PASS`, `DB_NAME`) according to your MySQL configuration.
 
 4. **Start the Application:**
