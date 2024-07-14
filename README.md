@@ -1,5 +1,7 @@
 # To-Do List Application
 
+This is a simple To-Do List application built using HTML, PHP, JavaScript, and Tailwind CSS.
+
 ## Author
 Naufal Ma'ruf Ashrori
 
