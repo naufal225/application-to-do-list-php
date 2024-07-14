@@ -56,7 +56,7 @@ Follow these steps to set up and run the To-Do List Application:
 - Open your web browser and go to  `http://localhost:8000`.
 
 6. **Login Credentials:**
-- Log in with your:
+Log in with your credentials. If you don't have an account, register.
 
 7. **Start Managing Your Tasks:**
 - You can now start managing your to-do list by adding, editing, and deleting tasks.
