@@ -30,6 +30,17 @@ function getAllListWithIdUser($id) {
     return $results;
 }
 
+function getAllListWithIdUserAndContent($id, $content) {
+    global $conn;
+    $query = "SELECT * FROM tbl_list where id_user = $id AND konten_list LIKE '%$content%'";
+    $result = mysqli_query($conn, $query);
+    $results = [];
+    while ($row = mysqli_fetch_array($result)) {
+        $results[] = $row;
+    }
+    return $results;
+}
+
 function getAllListWithContent($content) {
     global $conn;
     $query = "SELECT * FROM tbl_list where konten_list LIKE '%$content%'";
