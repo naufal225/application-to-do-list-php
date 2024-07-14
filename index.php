@@ -90,7 +90,9 @@ $no = 1;
                                         <?= $list['status_list'] == "done" ? "Done" : "Haven't done yet" ?>
                                     </td>
                                     <td>
-                                        <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> | 
+                                        <?php if($list['status_list'] != "done"): ?>
+                                            <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> |
+                                        <?php endif; ?>
                                         <a href="delete.php?id=<?= $list['id_list']?>" onclick="return confirm('Are you sure?')" class="text-red-500 hover:text-red-700">Delete</a>
                                     </td>
                                 </tr>
@@ -106,7 +108,9 @@ $no = 1;
                                         <?= $list['status_list'] == "done" ? "Done" : "Haven't done yet" ?>
                                     </td>
                                     <td>
-                                        <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> | 
+                                        <?php if($list['status_list'] != "done"): ?>
+                                            <a href="done.php?id=<?= $list['id_list']?>" class="text-blue-500 hover:text-blue-700">Done</a> |
+                                        <?php endif; ?>
                                         <a href="delete.php?id=<?= $list['id_list']?>" onclick="return confirm('Are you sure?')" class="text-red-500 hover:text-red-700">Delete</a>
                                     </td>
                                 </tr>
