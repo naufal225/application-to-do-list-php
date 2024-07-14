@@ -19,13 +19,13 @@ Naufal Ma'ruf Ashrori
 ![Add Task](screenshot/add.png)
 
 ## Technologies Used
-- HTML
-- PHP
-- JavaScript
-- Tailwind CSS
+- ![HTML](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=flat)
+- ![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=white&style=flat)
+- ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat)
+- ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?logo=tailwind-css&logoColor=white&style=flat)
 
 ## Database
-- MySQL
+- ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat)
 
 ## Installation Guide
 Follow these steps to set up and run the To-Do List Application:
