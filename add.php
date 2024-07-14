@@ -38,7 +38,7 @@ if(isset($_POST['submit'])) {
 </head>
 <body class="font-[Poppins] h-full min-h-screen w-[100%] bg-blue-400 flex justify-center items-center flex-col">
     <header class="w-[100vw] h-[10vh] bg-[#fff] m-0 fixed top-0">
-        <nav class="px-20 py-6 flex items-center justify-between h-full">
+        <nav class="px-5 py-3 md:px-10 md:py-6 flex items-center justify-between h-full">
             <h1 class="font-bold md:text-4xl text-sm">To Do List Application</h1>
             <h2 class="mr-20 md:text-2xl text-sm font-bold">Add Task</h2>
             <div class="flex items-center justify-between h-full min-w-fit">
@@ -53,7 +53,7 @@ if(isset($_POST['submit'])) {
     </header>
 
     <div class="flex items-center justify-center h-full w-full">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-5/12">
+        <div class="bg-white rounded-lg shadow-lg p-1 md:p-6 w-[90%] h-11/12 md:w-8/12 md:h-100">
             <h2 class="text-2xl font-bold">Add Your Task</h2>
             <form action="" method="post" class="inline-block my-5 mx-auto w-full ">
                 <input class="min-w-52 w-9/12 m-3 p-3 border-2 border-grey-500" type="text" name="task" id="task" placeholder="Add Task" required>

@@ -43,13 +43,25 @@ $no = 1;
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body class="font-[Poppins] h-full min-h-screen w-full bg-blue-400 flex justify-center items-center flex-col">
-    <header class="w-full h-10vh bg-white m-0 fixed top-0">
-        <nav class="px-20 py-6 flex items-center justify-between h-full">
-            <h1 class="font-bold md:text-4xl text-sm">To Do List Application</h1>
-            <h2 class="mr-20 md:text-2xl text-sm font-400">Hello, <?= $username ?></h2>
-            <div class="flex items-center justify-between h-full min-w-fit">
+    <header class="w-full md:h-10vh xs:h-5vh bg-white m-0 fixed top-0">
+        <nav class="px-5 py-3 md:px-10 md:py-6 flex items-center justify-between h-full">
+            <h1 class="font-bold md:text-4xl text-md sm:mt-3">To Do List Application</h1>
+            <h2 class="md:mr-20 md:text-2xl text-md font-400">Hello, <?= $username ?></h2>
+            <div class="menu md:hidden">
+                <i class='bx bx-menu text-2xl'></i>
+                <i class='bx bx-x text-2xl hidden' ></i>
+            </div>
+            <div class="flex items-center justify-between h-full min-w-fit md:inline-block hidden">
                 <form action="logout.php">
-                    <button class="bg-red-200 hover:bg-red-400 py-2 px-5 font-bold flex items-center justify-between gap-4 rounded-lg transition duration-100">
+                    <button class="bg-red-200 hover:bg-red-400 md:py-2 md:px-5 md:text-lg text-sm py-1 px-3 font-bold flex items-center justify-between gap-4 rounded-lg transition duration-100">
+                        Log Out
+                        <i class='bx bx-log-in'></i>
+                    </button>
+                </form>
+            </div>
+            <div class="menu-button absolute left-0 top-[6vh] h-16 bg-white w-full flex justify-center items-center md:hidden hidden">
+                <form action="logout.php">
+                    <button class="bg-red-200 hover:bg-red-400 md:py-2 md:px-5 md:text-lg text-sm py-1 px-3 font-bold flex items-center justify-between gap-4 rounded-lg transition duration-100">
                         Log Out
                         <i class='bx bx-log-in'></i>
                     </button>
@@ -60,7 +72,7 @@ $no = 1;
 
     <!-- CARD -->
     <div class="flex items-center justify-center max-h-7/12 w-full mt-20">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-8/12 max-h-100">
+        <div class="bg-white rounded-lg shadow-lg p-1 md:p-6 w-[90%] h-11/12 md:w-8/12 md:h-100">
             <h2 class="text-2xl font-bold mb-2">Your To Do List</h2>
             <form action="" method="get" class="">
                 <input class="min-w-52 w-10/12 m-3 p-3 border-2 border-grey-500" type="text" name="s" id="task" placeholder="Search Your Task">

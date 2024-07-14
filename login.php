@@ -61,23 +61,23 @@ if(isset($_POST["submit"])) {
 </head>
 <body class="font-[Poppins] min-h-screen w-full bg-[black] flex justify-center items-center">
      
-    <div class="md:w-3/12 sm:w-10/12 min-h-[60vh] bg-white rounded-lg flex flex-col justify-evenly items-center mx-auto">
+    <div class="xl:w-3/12 w-8/12 min-h-[60vh] bg-white rounded-lg flex flex-col justify-evenly items-center mx-auto">
         <h1 class="text-4xl font-bold mb-5 mt-5">Login</h1>
         <form action="" method="post" class="w-full max-w-sm">
             <?php if(isset($error)):?>
                 <p class="italic text-red-500 ml-7 my-2">Username atau password salah</p>
             <?php endif;?>
-            <div class="mb-4 ml-7">
-                <input class="p-2 w-50 md:w-80 rounded border border-gray-300" type="text" name="username" id="username" placeholder="Username" required>
+            <div class="mb-4 md:ml-7 p-2">
+                <input class="p-2 w-50 md:w-80 w-full rounded border border-gray-300" type="text" name="username" id="username" placeholder="Username" required>
             </div>
-            <div class="mb-4 ml-7">
-                <input class="p-2 w-50 md:w-80 rounded border border-gray-300" type="password" name="password" id="password" placeholder="Password" required>
+            <div class="mb-4 md:ml-7 p-2">
+                <input class="p-2 w-50 md:w-80 w-full rounded border border-gray-300" type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <div class="mb-4 flex items-center ml-9">
                 <input class="mr-2" type="checkbox" name="remember" id="remember">
                 <label for="remember">Remember Me</label>
             </div>
-            <button type="submit" name="submit" class="md:w-9/12 mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-11">Login</button>
+            <button type="submit" name="submit" class="md:w-9/12 ml-32 mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded md:ml-11">Login</button>
         </form>
         <div class="">
             <span>Belum punya akun? </span><a href="register.php" class="text-blue-500 hover:text-blue-700">Daftar</a>
