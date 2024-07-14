@@ -13,16 +13,16 @@ This is a simple To-Do List application built using HTML, PHP, JavaScript, and T
 ## Screenshots
 
 ### Login
-![Login Screenshot](path/to/login_screenshot.png)
+![Login Screenshot](scrsenshots/login_screenshot.png)
 
 ### Register
-![Register Screenshot](path/to/register_screenshot.png)
+![Register Screenshot](scrsenshots/register_screenshot.png)
 
 ### Home
-![Home Screenshot](path/to/home_screenshot.png)
+![Home Screenshot](screenshots/home_screenshot.png)
 
 ### Add Task
-![Add Task Screenshot](path/to/add_task_screenshot.png)
+![Add Task Screenshot](screenshots/add_task_screenshot.png)
 
 ## Technologies Used
 
