@@ -30,6 +30,7 @@ if(isset($_POST["submit"])) {
         if(password_verify($password, $row["password"])) {
             $_SESSION["login"] = true;
             $_SESSION['username'] = $username;  
+            $_SESSION['jml'] = $row['id_user'];
 
             if(isset($_POST['remember'])) {
                 setcookie('jml', $row["id_user"], time() + (7 * 24 * 60 * 60));

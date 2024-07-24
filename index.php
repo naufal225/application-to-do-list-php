@@ -8,6 +8,8 @@ if(!isset($_SESSION['login'])) {
     exit();
 }
 
+$s = isset($_GET['s']) ? $_GET['s'] : '';
+
 if(isset($_SESSION['username'])) {
     $id = $_SESSION['username'];
     $result = mysqli_query($conn, "SELECT * FROM tbl_user where username = '$id'");
@@ -24,7 +26,6 @@ if(isset($_SESSION['username'])) {
     $lists = getAllListWithIdUserAndContent($id, $s);
 }
 
-$s = isset($_GET['s']) ? $_GET['s'] : '';
 
 
 $no = 1;

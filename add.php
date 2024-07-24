@@ -1,9 +1,11 @@
 <?php 
 require 'functions.php';
 
+session_start();
+
 if(isset($_POST['submit'])) {
     $konten_list = $_POST['task'];
-    $id_user = $_COOKIE['jml'];
+    $id_user = $_SESSION['jml'];
     $query = "INSERT INTO tbl_list (konten_list, id_user, status_list) VALUES ('$konten_list', '$id_user', '')";
     if(query($query)>0) {
         echo "
