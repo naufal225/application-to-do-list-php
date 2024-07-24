@@ -14,16 +14,18 @@ if(isset($_SESSION['username'])) {
     $row = mysqli_fetch_assoc($result);
     $username = $row['username'];
     $id = $row['id_user'];
+    $lists = getAllListWithIdUserAndContent($id, $s);
 } elseif(isset($_COOKIE['jml'])) {
     $id = $_COOKIE['jml'];
     $result = mysqli_query($conn, "SELECT * FROM tbl_user WHERE id_user = $id");
     $row = mysqli_fetch_assoc($result);
     $username = $row["username"];
     $id = $row['id_user'];
+    $lists = getAllListWithIdUserAndContent($id, $s);
 }
 
 $s = isset($_GET['s']) ? $_GET['s'] : '';
-$lists = getAllListWithIdUserAndContent($id, $s);
+
 
 $no = 1;
 
